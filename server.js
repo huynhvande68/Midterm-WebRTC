@@ -18,10 +18,12 @@ const opinions = {
 app.use("/peerjs", ExpressPeerServer(server, opinions));
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
+app.get("/call", (req, res) => {
   res.redirect(`/${uuidv4()}`);
 });
-
+app.get("/", (req, res) => {
+  res.render('home');
+});
 app.get("/:room", (req, res) => {
   res.render("room", { roomId: req.params.room });
 });

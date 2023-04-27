@@ -1,0 +1,174 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Font Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Gmail</title>
+    <style>* {
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Header */
+    .header__left img {
+      object-fit: contain;
+      height: 45px;
+      margin-left: 10px;
+
+    }
+    
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid whitesmoke;
+    }
+    
+    .header__left {
+      display: flex;
+      align-items: center;
+    }
+    
+    .header__left span {
+      padding: 10px;
+      cursor: pointer;
+    }
+    
+    
+    .material-icons {
+      color: gray;
+    }
+    
+    .header__middle input {
+      border: none;
+      width: 100%;
+      padding: 10px;
+      outline: none;
+      font-size: medium;
+      background-color: transparent;
+    }
+    
+    .header__right {
+      display: flex;
+      padding-right: 50px;
+    }
+    
+    .header__right span {
+      padding: 10px;
+      cursor: pointer;
+    }
+    
+    
+    
+    /* main body */
+    .main__body {
+      display: flex;
+      height: 100vh;
+    }
+    
+    body {
+      height: 100vh;
+      overflow-y: hidden;
+    }
+    .main__body__left {
+        margin-top: 150px;
+        margin-left: 80px;
+    }
+    .main__body .slogan{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 50px;
+        
+    }
+    .main__body .disc-slogan{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-top: 30px;
+        color: rgb(121, 116, 116);
+        
+    }
+    .main__body__left .join{
+        margin-top: 50px;
+        padding: 20px;
+        width: 110px;
+        border-radius: 10px;
+        background-color:rgb(26,115,232);
+    }
+    .main__body__left .join .create-join{
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        color: aliceblue;
+        align-items: center;
+    }
+    .call .join, .join-link{
+        display: inline-block;
+    }
+    .call .join-link{
+        margin-left: 20px;
+    }
+    .call .join-link .input-join{
+        height: 55px;
+        border-radius: 10px;
+        border: 2px rgb(110, 110, 110) solid;
+    }
+    .call .join-link .input-join:hover{
+        border: 2px rgb(26,115,232) solid;
+    }
+    .call .join-link .submit-link{
+        height: 55px;
+        width: 75px;
+        margin-left: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        }
+    
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header__left">
+        <img
+          src="https://www.gstatic.com/meet/google_meet_horizontal_wordmark_2020q4_1x_icon_124_40_2373e79660dabbf194273d27aa7ee1f5.png"
+          alt=""
+        />
+      </div>
+      <div class="header__right">
+        <span class="material-icons"> apps </span>
+        <span class="material-icons"> account_circle </span>
+      </div>
+    </div>
+    
+   <div class="main__body">
+        <div class="main__body__left">
+            <div class="slogan">
+                <span>Cuộc họp video chất lượng.</span>
+                <br>
+                <span>Giờ đây miễn phí cho tất cả</span>
+                <br>
+                <span>mọi người.</span>
+            </div>
+            <div class="disc-slogan">
+                <span>Chúng tôi đã thiết kế lại Google Meet</span>
+                <br>
+                <span>Nâng cao tính bảo mật cho những cuộc họp.</span>
+            </div>
+            <div class="call">
+                <div class="join">
+                    <a href="/call" class="create-join">Cuộc họp mới</a>
+                </div>
+                <div class="join-link">
+                    <input id="inputId" class="input-join" type="text" placeholder=" Nhập đường dẫn để tham gia">
+                    <input class="submit-link" type="submit" value="Tham gia" >
+                </div>
+            </div>
+           
+        </div>
+        <div class="main__body__right">
+
+        </div>
+   </div>
+  </body>
+    
+</html>

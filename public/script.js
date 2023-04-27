@@ -21,8 +21,11 @@ showChat.addEventListener("click", () => {
   document.querySelector(".header__back").style.display = "block";
 });
 
-let user = prompt("Enter your name");
-//let user;
+let user = sessionStorage.getItem("user");
+if (!user) {
+  user = prompt("Enter your name");
+  sessionStorage.setItem("user", user);
+}
 
 var peer = new Peer({
   host: '127.0.0.1',
@@ -159,22 +162,6 @@ inviteButton.addEventListener("click", (e) => {
   );
 });
 
-// function handleConnectionSuccess(){
-//   user = sessionStorage.getItem('user')
-//   console.log('Đã kết nối thành công với id: '+ socket.id);
-//   if(user){
-//     console.log('Tên đã được đọc từ sessionstorage');
-//   }
-//   setTimeout(() => {
-//         if(!user){
-//         user  = prompt('Nhập tên của bạn: ');
-//         sessionStorage.setItem('user', user);
-//         console.log('Đã lưu tên người dùng vào sessionstoregare');
-//         }
-//         document.title = 'Bạn là '+ user;
-//         //socket.emit('register-name', username); //Gửi tên qua cho server
-//   },500)
-// } 
 socket.on("createMessage", (message, username) => {
   messages.innerHTML =
     messages.innerHTML +
