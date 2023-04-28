@@ -28,9 +28,6 @@ if (!user) {
 }
 
 var peer = new Peer({
-  host: '127.0.0.1',
-  port: 9090,
-  path: '/peerjs',
   debug: 3
 });
 
