@@ -23,7 +23,7 @@ showChat.addEventListener("click", () => {
 
 let user = sessionStorage.getItem("user");
 if (!user) {
-  user = prompt("Enter your name");
+  user = prompt("Hãy nhập tên của bạn để bắt đầu cuộc họp:");
   sessionStorage.setItem("user", user);
 }
 
@@ -31,30 +31,6 @@ var peer = new Peer({
   host: '127.0.0.1',
   port: 9090,
   path: '/peerjs',
-  config: {
-    'iceServers': [
-      { url: 'stun:stun01.sipphone.com' },
-      { url: 'stun:stun.ekiga.net' },
-      { url: 'stun:stunserver.org' },
-      { url: 'stun:stun.softjoys.com' },
-      { url: 'stun:stun.voiparound.com' },
-      { url: 'stun:stun.voipbuster.com' },
-      { url: 'stun:stun.voipstunt.com' },
-      { url: 'stun:stun.voxgratia.org' },
-      { url: 'stun:stun.xten.com' },
-      {
-        url: 'turn:192.158.29.39:3478?transport=udp',
-        credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
-        username: '28224511:1379330808'
-      },
-      {
-        url: 'turn:192.158.29.39:3478?transport=tcp',
-        credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
-        username: '28224511:1379330808'
-      }
-    ]
-  },
-
   debug: 3
 });
 
@@ -125,6 +101,7 @@ text.addEventListener("keydown", (e) => {
 const inviteButton = document.querySelector("#inviteButton");
 const muteButton = document.querySelector("#muteButton");
 const stopVideo = document.querySelector("#stopVideo");
+
 muteButton.addEventListener("click", () => {
   const enabled = myVideoStream.getAudioTracks()[0].enabled;
   if (enabled) {
@@ -157,16 +134,16 @@ stopVideo.addEventListener("click", () => {
 
 inviteButton.addEventListener("click", (e) => {
   prompt(
-    "Sao chép đường dẫn và gửi lời mời đến người bạn muốn gặp",
+    "Sao chép liên kết này và gửi cho những người bạn muốn gặp",
     window.location.href
   );
 });
 
-socket.on("createMessage", (message, username) => {
+socket.on("createMessage", (message, userName) => {
   messages.innerHTML =
     messages.innerHTML +
     `<div class="message">
-        <b><i class="far fa-user-circle"></i> <span> ${username === user ? "Tôi" : userName
+        <b><i class="far fa-user-circle"></i> <span> ${userName === user ? "Tôi" : userName
     }</span> </b>
         <span>${message}</span>
     </div>`;
