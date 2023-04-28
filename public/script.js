@@ -101,7 +101,8 @@ const stopVideo = document.querySelector("#stopVideo");
 const disConnect = document.querySelector("#disButton");
 
 disConnect.addEventListener("click", () => {
-  
+  sessionStorage.clear();
+  window.location.href = "/";
 })
 muteButton.addEventListener("click", () => {
   const enabled = myVideoStream.getAudioTracks()[0].enabled;
